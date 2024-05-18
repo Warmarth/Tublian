@@ -5,10 +5,9 @@
 
 /* Path: tublian_dashbord/src/App.css */
 :root {
+  --text-primary: #fefefe;
+  --card-btn: #fefefe;
+  --search-btn: linear-gradient(90deg, #fbda61 0%, #ff5acd 100%);
+  --text-secondary: #b7b7b7;
   --font-style: "Platypi, sans-serif";
-  --bg-col: linear-gradient(red, green);
-}
-
-.color {
-  background-color: var(--bg-col);
 }
