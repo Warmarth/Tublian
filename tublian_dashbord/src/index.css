@@ -7,7 +7,11 @@
 :root {
   --text-primary: #fefefe;
   --card-btn: #fefefe;
-  --search-btn: linear-gradient(90deg, #fbda61 0%, #ff5acd 100%);
+  --main-gradient: linear-gradient(#fbda61, #ff5acd);
   --text-secondary: #b7b7b7;
   --font-style: "Platypi, sans-serif";
+}
+
+.menu {
+  background: var(--main-gradient);
 }
