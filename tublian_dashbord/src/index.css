@@ -7,11 +7,38 @@
 :root {
   --text-primary: #fefefe;
   --card-btn: #fefefe;
+  --background: #1e1e1e;
   --main-gradient: linear-gradient(#fbda61, #ff5acd);
   --text-secondary: #b7b7b7;
   --font-style: "Platypi, sans-serif";
 }
 
 .menu {
-  background: var(--main-gradient);
+  background: var(--background);
+  border-radius: 10px;
+  font-family: var(--font-style);
+}
+.menu ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 0.7rem;
+  transition: all 0.3s linear;
+}
+.menu ul li {
+  list-style: none;
+  padding: 0.5rem 0.8rem;
+  transition: all 0.3s linear;
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  font-family: var(--font-style);
+  border-radius: 10px;
+}
+
+.menu ul li:hover {
+  transition: all 0.3s linear;
+  background-color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-style);
 }
