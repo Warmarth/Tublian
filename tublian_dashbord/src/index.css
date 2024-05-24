@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Platypi:ital,wght@0,300..800;1,300..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,9 +7,11 @@
   --text-primary: #fefefe;
   --card-btn: #fefefe;
   --background: #1e1e1e;
+  --background50: #292929;
   --main-gradient: linear-gradient(#fbda61, #ff5acd);
+  --text-primary: #fefefe;
   --text-secondary: #b7b7b7;
-  --font-style: "Platypi, sans-serif";
+  --card-btn: #fbda61;
 }
 
 .menu {
@@ -38,7 +39,33 @@
 
 .menu ul li:hover {
   transition: all 0.3s linear;
-  background-color: var(--text-secondary);
+  /* background-color: var(--text-secondary); */
   cursor: pointer;
   font-family: var(--font-style);
+  background-color: var(--main-gradient);
+}
+.gradient {
+  background: var(--main-gradient);
+}
+.bg50 {
+  background: var(--background50);
+}
+.bg {
+  background: var(--background);
+}
+.text-p {
+  color: var(--text-primary);
+}
+.text-s {
+  color: var(--text-secondary);
+}
+
+.axe {
+  border: ridge 1px color-mix(in hsl, #fbda61 50%, #ff5acd 60%);
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.b {
+  background-color: var(--card-btn);
 }
