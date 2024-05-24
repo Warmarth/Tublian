@@ -11,7 +11,7 @@ function App() {
   }
   return (
     <>
-      <div className="App w-[25rem] h-[100vh] border overflow-hidden bg-[#1E1E1E] text-slate-100  px-4">
+      <div className="App w-[25rem] h-[100vh] border overflow-hidden bg-[#1E1E1E] text-slate-100  px-4 md:w-full md:flex">
         <aside className="">
           <div className=" flex items-center flex-1  w-full  justify-end gap-2 ">
             <input
@@ -72,9 +72,8 @@ function App() {
           </section>
           <section className="mt-3  px-3 pt-3 pb-5 rounded-box bg50 overflow-hidden">
             <article className=" ">
-              {/* diffrent  */}
               <AvaterCard />
-              <section className=" flex gap-2 items-center justify-start font-mono text-sm on-wrap overflow-hidden   border ">
+              <section className=" overflow-hidden flex gap-3 items-start justify-start w-[100vw] md:w-full no-wrap ">
                 <Card />
                 <Card />
               </section>
@@ -89,8 +88,8 @@ function App() {
 export default App;
 function Card() {
   return (
-    <div className="border rounded-xl p-3  text-[.9rem] space-y-2 text-p">
-      <span className="border rounded-xl px-4 py-1">Other</span>
+    <div className="border w-[22rem] h-[12rem] rounded-xl p-3  text-[.9rem] space-y-2 text-p">
+      <span className="border rounded-2xl px-4 py-1">Other</span>
       <h2 className="text-lg capitalize">porfolio</h2>
       <p className="text-s">
         text Lorem ipsum dolor Lorem ipsum dolor, sit amet consectetur
