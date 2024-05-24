@@ -61,11 +61,17 @@ function App() {
 
           <section className="flex  gap-3 items-center justify-start no-wrap capitalize">
             <p className="text-p axe"> discover</p>
-            <span className="btn "> frontend developer</span>
-            <span className="btn "> backend developer</span>
+            <span className="btn bg50 border-none  text-p ">
+              {" "}
+              frontend developer
+            </span>
+            <span className="btn bg50  border-none text-p ">
+              {" "}
+              backend developer
+            </span>
           </section>
-          <section className="mt-3  px-3 py-2 rounded-box bg50">
-            <article className="flex flex-col ">
+          <section className="mt-3  px-3 pt-3 pb-5 rounded-box bg50 overflow-hidden">
+            <article className=" ">
               <section className="flex items-start justify-between py-1">
                 <div className="flex gap-4">
                   <div>
@@ -84,21 +90,25 @@ function App() {
                   hire me
                 </button>
               </section>
-              <section className=" flex gap-2 items-center justify-start font-mono p-1 text-sm on-wrap overflow-hidden">
-                <div className="border p-2  w-72 text-[.8rem]">
-                  <p className="border">other</p>
+              <section className=" flex gap-2 items-center justify-start font-mono text-sm on-wrap overflow-hidden   border ">
+                <div className="border rounded-xl p-3  text-[.9rem] space-y-2 text-p">
+                  <span className="border rounded-xl px-4 py-1">Other</span>
+                  <h2 className="text-lg capitalize">porfolio</h2>
+                  <p className="text-s">
+                    text Lorem ipsum dolor Lorem ipsum dolor, sit amet
+                    consectetur adipisicing elit .
+                  </p>
+                  <p className="text-s">
+                    latest update:{" "}
+                    <span className="text-p"> tue,dec 13, 2022</span>{" "}
+                  </p>
+                </div>
+                {/* <div className="border rounded-xl p-3  w-72 text-[.7rem] ">
+                  <p>other</p>
                   <h2>porfolio</h2>
                   <p>text Lorem ipsum dolor .</p>
                   <p>latest update: tue,dec 13, 2022</p>
-                </div>
-                <div className="border  w- text-[.8rem]">
-                  <div>
-                    <p>other</p>
-                    <h2>porfolio</h2>
-                    <p>text Lorem ipsum dolor .</p>
-                  </div>
-                  <p>latest update: tue,dec 13, 2022</p>
-                </div>
+                </div> */}
               </section>
             </article>
           </section>
