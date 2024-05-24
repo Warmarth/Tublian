@@ -3,6 +3,7 @@ import search from "/icons/search-normal.png";
 import menuIcon from "/icons/menu.png";
 import filter from "/icons/filter.png";
 import frame from "/icons/Frame.png";
+import { Children } from "react";
 function App() {
   const [menuBtn, setMenuBtn] = useState(false);
   const [query, setQuery] = useState("");
@@ -11,7 +12,7 @@ function App() {
   }
   return (
     <>
-      <div className="App w-[25rem] h-[100vh] border overflow-hidden bg-[#1E1E1E] text-slate-100  px-4 md:w-full md:flex">
+      <div className="App w-[25rem] h-[100vh] border overflow-y-visible overflow-x-hidden bg-[#1E1E1E] text-slate-100  px-4 md:w-full md:flex">
         <aside className="">
           <div className=" flex items-center flex-1  w-full  justify-end gap-2 ">
             <input
@@ -70,15 +71,20 @@ function App() {
               backend developer
             </span>
           </section>
-          <section className="mt-3  px-3 pt-3 pb-5 rounded-box bg50 overflow-hidden">
-            <article className=" ">
-              <AvaterCard />
-              <section className=" overflow-hidden flex gap-3 items-start justify-start w-[100vw] md:w-full no-wrap ">
-                <Card />
-                <Card />
-              </section>
-            </article>
-          </section>
+          <Layout>
+            <AvaterCard />
+            <section className=" flex gap-3 items-start justify-start w-[110vw] md:w-full  ">
+              <Card />
+              <Card />
+            </section>
+          </Layout>
+          <Layout>
+            <AvaterCard />
+            <section className=" flex gap-3 items-start justify-start w-[110vw] md:w-full  ">
+              <Card />
+              <Card />
+            </section>
+          </Layout>
         </main>
       </div>
     </>
@@ -88,7 +94,7 @@ function App() {
 export default App;
 function Card() {
   return (
-    <div className="border w-[22rem] h-[12rem] rounded-xl p-3  text-[.9rem] space-y-2 text-p">
+    <div className="border w-[25rem] h-[12rem] rounded-xl py-3 pl-5 text-[.9rem] space-y-2 text-p">
       <span className="border rounded-2xl px-4 py-1">Other</span>
       <h2 className="text-lg capitalize">porfolio</h2>
       <p className="text-s">
@@ -119,6 +125,14 @@ function AvaterCard() {
       <button className="b capitalize px-3 py-1 font-medium border-none text-[#1e1e1e] rounded-2xl ">
         hire me
       </button>
+    </section>
+  );
+}
+
+export function Layout({ children }) {
+  return (
+    <section className="mt-3  px-3 pt-3 pb-5 rounded-box bg50 overflow-hidden">
+      <article className="space-y-3">{children}</article>
     </section>
   );
 }
