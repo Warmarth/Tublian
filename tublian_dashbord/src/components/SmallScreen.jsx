@@ -17,7 +17,11 @@ const SmallScreen = () => {
     <section>
       <aside className="">
         <div className=" flex items-center flex-1  w-full  justify-end gap-2 ">
-          <Input value={query} change={setQuery} />
+          <Input
+            value={query}
+            change={(e) => setQuery(e.target.value)}
+            className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50"
+          />
           <Button
             src={search}
             alt="search icon"

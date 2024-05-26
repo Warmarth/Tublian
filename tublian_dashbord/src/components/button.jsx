@@ -6,14 +6,15 @@ export default function Button(props) {
   );
 }
 
-export function Input({ value, change }) {
+export function Input({ value, change, className, ...props }) {
   return (
     <input
       type="text"
       placeholder="search"
-      className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50"
+      className={className}
       value={value}
       onChange={change}
+      {...props}
     />
   );
 }

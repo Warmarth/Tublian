@@ -11,7 +11,7 @@
   --main-gradient: linear-gradient(#fbda61, #ff5acd);
   --text-primary: #fefefe;
   --text-secondary: #b7b7b7;
-  --card-btn:#FDD649;
+  --card-btn: #fdd649;
 }
 
 .menu {
@@ -68,4 +68,8 @@
 
 .b {
   background-color: var(--card-btn);
+}
+
+.place::placeholder {
+  background-image: "/icons/filter.png";
 }
