@@ -17,8 +17,8 @@ const MidScreen = () => {
           className="flex flex-row-reverse gap-5  w-full items-center"
         />
       </div> 
-      <div className=" flex w-full justify-between  ">
-        <div className="bg50 w-10/12 flex gap-2 items-center pt-1 pb-1 pl-3 rounded">
+      <div className=" flex w-full justify-between gap-2  ">
+        <div className="bg50 lg:w-9/12 flex gap- items-center pt-1 pb-1 pl-3 rounded">
           <ImageCard src={search} />
           <Input
             className=" text-xl border-none outline-none w-full bg50"
