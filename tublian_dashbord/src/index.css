@@ -14,20 +14,20 @@
   --card-btn: #fdd649;
 }
 
-.menu {
+/* .menu {
   background: var(--background);
   border-radius: 10px;
   font-family: var(--font-style);
-}
-.menu ul {
+} */
+/* .menu ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   row-gap: 0.7rem;
   transition: all 0.3s linear;
-}
-.menu ul li {
+} */
+/* .menu ul li {
   list-style: none;
   padding: 0.5rem 0.8rem;
   transition: all 0.3s linear;
@@ -35,7 +35,7 @@
   color: var(--text-primary);
   font-family: var(--font-style);
   border-radius: 10px;
-}
+} */
 
 .menu ul li:hover {
   transition: all 0.3s linear;
@@ -61,7 +61,7 @@
 }
 
 .axe {
-  border: ridge 1px color-mix(in hsl, #fbda61 50%, #ff5acd 60%);
+  border: ridge 1px color-mix(in hsl, #fbda61 70%, #ff5acd 50%);
   padding: 8px;
   border-radius: 10px;
 }
@@ -70,6 +70,4 @@
   background-color: var(--card-btn);
 }
 
-.place::placeholder {
-  background-image: "/icons/filter.png";
-}
+

@@ -9,6 +9,8 @@ import MidScreen from "./components/midScreen";
 import NavBar from "./components/Navbar";
 import image2 from "/icons/Frame448.png";
 import image1 from "/icons/Frame48.png";
+import frame from "/icons/Frame.png";
+
 function App() {
   const [veiw, setView] = useState(<SmallScreen />);
   useEffect(() => {
@@ -26,12 +28,17 @@ function App() {
     };
   }, []);
   return (
-    <>
-      <div className="App w-[30rem] h-[100vh] border overflow-y-visible overflow-x-hidden bg-[#1E1E1E] text-slate-100  px-4  md:w-full lg:flex">
-        <div className="absolute lg:relative">
+    <section className="bg-[#1E1E1E]">
+      <div className="App  overflow-x-hidden pt-5 border overflow-y-visible  text-slate-100  px-4  gap-3 lg:flex">
+        <div className=" transition-all hidden lg:block">
+          <ImageCard
+            src={frame}
+            className=" p-3 mr-3  "
+            imageClassname="transition-all m-auto xl:m-0 xl:ml-auto"
+          />
           <NavBar />
         </div>
-        <main>
+        <main className="lg:border lg:px-4">
           {veiw}
           <Layout>
             <AvaterCard
@@ -39,12 +46,7 @@ function App() {
               place="New jersey, USA"
               amount="$250,000 (USD)"
             />
-            <section className="  flex flex-1 items-start   gap-2 w-[55rem] md:w-full  ">
-              <ImageCard
-                src={frames}
-                className=" "
-                imageClassname="w-[25rem] h-[12rem]"
-              />
+            <section className="  flex flex-1 items-start transition-all  gap-2 w-[55rem] lg:w-full  ">
               <Card />
               <Card />
             </section>
@@ -52,17 +54,22 @@ function App() {
           <Layout>
             <AvaterCard
               frame={image2}
-              place="New jersey, USA"
-              amount="$250,000 (USD)"
+              place="Lagos, NIgeria"
+              amount="$1000-3000 (USD)"
             />
-            <section className=" flex gap-3 items-start justify-start w-[55em] md:w-full  ">
-              <Card />
+            <section className=" flex gap-3 items-start justify-start w-[55rem] lg:w-full  ">
+              <Card />{" "}
+              <ImageCard
+                src={frames}
+                className=" "
+                imageClassname="w-[25rem] h-[12rem]"
+              />
               <Card />
             </section>
           </Layout>
         </main>
       </div>
-    </>
+    </section>
   );
 }
 

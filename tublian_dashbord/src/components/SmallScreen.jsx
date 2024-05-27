@@ -6,10 +6,11 @@ import Button, { Input } from "./button";
 import filter from "/icons/filter.png";
 import NavBar from "./Navbar";
 import Field from "./strake";
+import UseInput from "./useInput";
 
 const SmallScreen = () => {
   const [menuBtn, setMenuBtn] = useState(false);
-  const [query, setQuery] = useState("");
+  let [qurey, setQuery] = UseInput();
   function handleMenu() {
     setMenuBtn((i) => !i);
   }
@@ -18,7 +19,7 @@ const SmallScreen = () => {
       <aside className="">
         <div className=" flex items-center flex-1  w-full  justify-end gap-2 ">
           <Input
-            value={query}
+            value={qurey}
             change={(e) => setQuery(e.target.value)}
             className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50"
           />
