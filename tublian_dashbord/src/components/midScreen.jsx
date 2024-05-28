@@ -5,15 +5,14 @@ import Field from "./strake";
 import search from "/icons/search-normal.png";
 import filter from "/icons/filter.png";
 import arrow from "/icons/arrow-down.png";
-import UseInput from "./useInput";
 
 const MidScreen = () => {
-  let { qurey, setQuery } = UseInput();
-
   return (
     <div className=" space-y-5  ">
       <div className="flex items-center justify-between  w-full border-b  border-b-[#888888]">
-        <h1 className="capitalize text-2xl ml-3 xl:ml-12 py-7 w-4/6">find Developers</h1>
+        <h1 className="capitalize text-2xl ml-3 xl:ml-12 py-7 w-4/6">
+          find Developers
+        </h1>
         <ImageCard
           src={arrow}
           name="Sort By high streetcred"
@@ -24,8 +23,6 @@ const MidScreen = () => {
         <div className="bg50 lg:w-9/12 flex items-center pt-1 pb-1 pl-3 gap-3 rounded ">
           <ImageCard src={search} />
           <Input
-            value={qurey}
-            change={(e) => setQuery(e.target.value)}
             className=" text-xl border-none outline-none w-full bg50"
             placeholder=" Try Searching “full time backend developer”"
           />

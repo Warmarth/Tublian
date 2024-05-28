@@ -1,7 +1,10 @@
 import { useState } from "react";
 
-const UseInput = () => {
-  const [qurey, setQuery] = useState(" ");
-  return [qurey, setQuery];
+const useInput = (i = "") => {
+  const [query, setQuery] = useState(i);
+  const handleQuery = (e) => {
+    setQuery(e.target.value);
+  };
+  return [query, handleQuery];
 };
-export default UseInput;
+export default useInput;

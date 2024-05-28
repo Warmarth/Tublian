@@ -1,19 +1,21 @@
+import useInput from "./useInput";
 export default function Button(props) {
   return (
     <button className={props.className} {...props}>
-      <img src={props.src} alt={props.alt} className="m-auto" />{props.Butt}
+      <img src={props.src} alt={props.alt} className="m-auto" />
+      {props.Butt}
     </button>
   );
 }
 
-export function Input({ value, change, className , placeholder, ...props }) {
+export function Input({ className, ...props }) {
+  const [query, handleQuery] = useInput("");
   return (
     <input
       type="text"
       className={className}
-      value={value}
-      placeholder={props.placeholder}
-      onChange={change}
+      value={query}
+      onChange={handleQuery}
       {...props}
     />
   );
