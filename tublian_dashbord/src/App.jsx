@@ -29,7 +29,7 @@ function App() {
   }, []);
   return (
     <section className="bg-[#1E1E1E]">
-      <div className="App  overflow-x-hidden pt-5 border overflow-y-visible  text-slate-100  px-4  gap-3 lg:flex">
+      <div className="App  overflow-x-hidden pt-5   overflow-y-visible  text-slate-100  px-4  gap-3 lg:flex">
         <div className=" transition-all hidden lg:block">
           <ImageCard
             src={frame}
@@ -38,7 +38,7 @@ function App() {
           />
           <NavBar />
         </div>
-        <main className="lg:border lg:px-4">
+        <main className="lg:border lg:border-[#888888] rounded-xl">
           {veiw}
           <Layout>
             <AvaterCard
@@ -47,8 +47,11 @@ function App() {
               amount="$250,000 (USD)"
             />
             <section className="  flex flex-1 items-start transition-all  gap-2 w-[55rem] lg:w-full  ">
-              <Card />
-              <Card />
+              <Card
+                title="My_Resume"
+                description="I am updating my resume, as completing my projects."
+              />
+              <Card title="My_Resume" />
             </section>
           </Layout>
           <Layout>
