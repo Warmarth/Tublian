@@ -61,13 +61,19 @@ function App() {
               amount="$1000-3000 (USD)"
             />
             <section className=" flex gap-3 items-start justify-start w-[55rem] lg:w-full  ">
-              <Card />{" "}
+              <Card
+                title="My_Resume"
+                description="I am updating my resume, as completing my projects."
+              />{" "}
               <ImageCard
                 src={frames}
                 className=" "
                 imageClassname="w-[25rem] h-[12rem]"
               />
-              <Card />
+              <Card
+                title="
+                
+              />
             </section>
           </Layout>
         </main>

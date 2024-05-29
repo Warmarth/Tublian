@@ -14,10 +14,10 @@ export default function AvaterCard(props) {
             </span>
             <p>{props.amount}</p>
           </div>
-          <p className="border px-2 text-p rounded-xl">frontend developer</p>
+          <p className="border w-44 text-nowrap text-center text-p  rounded-xl mt-3">frontend developer</p>
         </div>
       </div>
-      <button className="b capitalize px-4 py-2 font-medium border-none text-[#1e1e1e] rounded-3xl ">
+      <button className="b capitalize border-none text-[#1e1e1e] rounded-3xl btn btn-primary font-bold hover:text-white ">
         hire me
       </button>
     </section>
