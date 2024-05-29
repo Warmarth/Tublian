@@ -29,7 +29,7 @@ function App() {
   }, []);
   return (
     <section className="bg-[#1E1E1E]">
-      <div className="App  overflow-x-hidden pt-5   overflow-y-visible  text-slate-100  px-4  gap-3 lg:flex">
+      <div className="App  overflow-x-hidden pt-5   overflow-y-visible  text-slate-100  px-4  gap-3 lg:flex justify-center">
         <div className=" transition-all hidden lg:block">
           <ImageCard
             src={frame}
@@ -51,7 +51,7 @@ function App() {
                 title="My_Resume"
                 description="I am updating my resume, as completing my projects."
               />
-              <Card title="My_Resume" />
+              <Card title="Portfolio" />
             </section>
           </Layout>
           <Layout>
@@ -64,16 +64,13 @@ function App() {
               <Card
                 title="My_Resume"
                 description="I am updating my resume, as completing my projects."
-              />{" "}
+              />
               <ImageCard
                 src={frames}
                 className=" "
                 imageClassname="w-[25rem] h-[12rem]"
               />
-              <Card
-                title="
-                
-              />
+              <Card title="Portfolio" />
             </section>
           </Layout>
         </main>
