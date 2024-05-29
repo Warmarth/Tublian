@@ -18,7 +18,7 @@ export default function NavBar() {
           <ImageCard
             className={`flex items-center justify-center xl:justify-start gap-3 rounded-md bg-inherit hover:bg-[#2f2e2e] py-2 px-3 xl:w-52 cursor-pointer ${
               isActive === 0 &&
-              "bg-[#2f2e2e] transition-all scale-105 text-blue-100 text-[800]"
+              "bg-[#1f2e2e] transition-all scale-105 text-blue-100 text-[800]"
             }`}
             src={dashboard}
             imageClassname="hidden w-6 lg:flex"
@@ -29,7 +29,7 @@ export default function NavBar() {
           <ImageCard
             className={`flex items-center justify-center xl:justify-start gap-3 rounded-md bg-inherit hover:bg-[#2f2e2e] py-2 px-3 xl:w-52 cursor-pointer ${
               isActive === 1 &&
-              "bg-[#2f2e2e] transition-all scale-105  text-blue-100"
+              "bg-[#1f2e2e]  transition-all scale-105  text-blue-100"
             }`}
             src={money}
             imageClassname="hidden w-6 lg:flex"
@@ -40,7 +40,7 @@ export default function NavBar() {
           <ImageCard
             className={`flex items-center justify-center xl:justify-start gap-3 rounded-md bg-inherit hover:bg-[#2f2e2e] py-2 px-3 xl:w-52 cursor-pointer ${
               isActive === 2 &&
-              "bg-[#2f2e2e] transition-all scale-105  text-blue-100"
+              "bg-[#1f2e2e]  transition-all scale-105  text-blue-100"
             }`}
             src={notifications}
             imageClassname="hidden w-6 lg:flex"
@@ -53,7 +53,7 @@ export default function NavBar() {
           <ImageCard
             className={`flex items-center justify-center xl:justify-start gap-3 rounded-md bg-inherit hover:bg-[#2f2e2e] py-2 px-3 xl:w-52 cursor-pointer ${
               isActive === 3 &&
-              "bg-[#2f2e2e] transition-all scale-105  text-blue-100"
+              "bg-[#1f2e2e]  transition-all scale-105  text-blue-100"
             }`}
             imageClassname="hidden w-6 lg:flex"
             nameClassname="lg:hidden xl:flex"
@@ -64,7 +64,7 @@ export default function NavBar() {
           <ImageCard
             className={`flex items-center justify-center xl:justify-start gap-3 rounded-md bg-inherit hover:bg-[#2f2e2e] py-2 px-3 xl:w-52 cursor-pointer ${
               isActive === 4 &&
-              "bg-[#2f2e2e] transition-all scale-105  text-blue-100"
+              "bg-[#1f2e2e]  transition-all scale-105  text-blue-100"
             }`}
             src={settings}
             imageClassname="hidden w-6 lg:flex "
