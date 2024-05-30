@@ -45,3 +45,17 @@
 .b {
   background-color: var(--card-btn);
 }
+
+.rotate {
+  font-size: 3rem;
+  color: red;
+  padding-bottom: 6px;
+  width: 2rem;
+  height: 2rem;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(45deg);
+  /* margin-right: 1rem; */
+}

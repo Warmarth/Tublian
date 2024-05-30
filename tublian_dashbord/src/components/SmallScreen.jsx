@@ -30,13 +30,12 @@ const SmallScreen = () => {
           />
         </div>
         {menuBtn && (
-          <div className="w-full h-[100vh] bg-[#3d3e3e] right-0  absolute z-20 top-0">
-            <p
-              className="text-3xl text-right mr-10 mt-7 mb-3 cursor-pointer"
-              onClick={() => setMenuBtn(false)}
-            >
-              +
-            </p>
+          <div className="w-full h-[100vh] bg-[#3d3e3e] right-0 px-3  absolute z-20 top-0">
+            <div className=" mt-7 mb-3 cursor-pointer">
+              <p className="rotate  ml-auto" onClick={() => setMenuBtn(false)}>
+                +
+              </p>
+            </div>
             <NavBar />
           </div>
         )}
