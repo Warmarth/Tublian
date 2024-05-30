@@ -36,7 +36,7 @@ function App() {
           <div className=" transition-all hidden lg:block">
             <ImageCard
               src={frame}
-              className=" p-3 mr-3  "
+              className=" xl:pb-2 xl:mr-5"
               imageClassname="transition-all m-auto xl:m-0 xl:ml-auto"
             />
             <NavBar />

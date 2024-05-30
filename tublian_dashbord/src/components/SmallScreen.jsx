@@ -10,13 +10,13 @@ import Field from "./strake";
 const SmallScreen = () => {
   const [menuBtn, setMenuBtn] = useState(false);
   function handleMenu() {
-    setMenuBtn((i) => !i);
+    setMenuBtn(true);
   }
   return (
     <section>
       <aside className="">
         <div className=" flex items-center flex-1  w-full  justify-end gap-2 ">
-            <Input className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50" />
+          <Input className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50" />
           <Button
             src={search}
             alt="search icon"
@@ -25,11 +25,21 @@ const SmallScreen = () => {
           <Button
             src={menuIcon}
             alt="menu icon"
-            className="px-4 py-2 rounded-md border-none outline-none   "
+            className="px-4 py-2 rounded-md border-none outline-none  transition-all  "
             onClick={handleMenu}
           />
         </div>
-        {menuBtn && <NavBar />}
+        {menuBtn && (
+          <div className="w-full h-[100vh] bg-[#3d3e3e] right-0  absolute z-20 top-0">
+            <p
+              className="text-3xl text-right mr-10 mt-7 mb-3 cursor-pointer"
+              onClick={() => setMenuBtn(false)}
+            >
+              +
+            </p>
+            <NavBar />
+          </div>
+        )}
       </aside>
       <header className="capitalize my-3">
         <h1 className="text-xl py-2">find Developers</h1>
