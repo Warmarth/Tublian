@@ -16,7 +16,7 @@ const MidScreen = () => {
         <ImageCard
           src={arrow}
           name="Sort By high streetcred"
-          className="flex bg50 flex-row-reverse gap-5   rounded-lg px-3 py-3 items-center mr-3 2xl:mr-12"
+          className="flex bg50 flex-row-reverse gap-5  text-nowrap rounded-lg px-3 py-3 items-center mr-3 2xl:mr-12"
         />
       </div>
       <div className=" flex  justify-between gap-3 w-11/12 mx-auto 2xl:w-10/12">

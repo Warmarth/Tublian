@@ -1,4 +1,6 @@
-import useInput from "./useInput";
+import React, { useContext } from "react";
+import { InputContext } from "./useInput.js";
+
 export default function Button(props) {
   return (
     <button className={props.className} {...props}>
@@ -9,7 +11,7 @@ export default function Button(props) {
 }
 
 export function Input({ className, ...props }) {
-  const [query, handleQuery] = useInput("");
+  const [query, handleQuery] = useContext(InputContext);
   return (
     <input
       type="text"

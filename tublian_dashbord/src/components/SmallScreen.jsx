@@ -16,7 +16,7 @@ const SmallScreen = () => {
     <section>
       <aside className="">
         <div className=" flex items-center flex-1  w-full  justify-end gap-2 ">
-          <Input className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50" />
+            <Input className="w-full pt-1 pb-1 pl-3 rounded text-xl border-none outline-none bg50" />
           <Button
             src={search}
             alt="search icon"

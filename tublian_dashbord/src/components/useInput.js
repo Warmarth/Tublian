@@ -1,5 +1,5 @@
-import { useState } from "react";
-
+import { useState, createContext } from "react";
+export const InputContext = createContext("Default Value");
 const useInput = (i = "") => {
   const [query, setQuery] = useState(i);
   const handleQuery = (e) => {
