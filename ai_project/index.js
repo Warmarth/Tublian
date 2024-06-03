@@ -21,6 +21,7 @@ const Ai_chat = (ques) => {
     })
     .then((chatCompletion) => {
       rl.output.write(chatCompletion.choices[0]?.message?.content || "");
+      console.log("\n sentiment:  ");
     });
 };
 
@@ -31,28 +32,9 @@ function askedQuestion() {
       rl.close();
     } else {
       Ai_chat(question);
-      console.log("\n");
       askedQuestion();
     }
   });
 }
 
 askedQuestion();
-
-// async function main() {
-//   const completion = await groq.chat.completions
-//     .create({
-//       messages: [
-//         {
-//           role: "user",
-//           content: "what are the causes of climate change",
-//         },
-//       ],
-//       model: "llama3-8b-8192",
-//     })
-//     .then((chatCompletion) => {
-//       process.stdout.write(chatCompletion.choices[0]?.message?.content || "");
-//     });
-// }
-
-// main();
