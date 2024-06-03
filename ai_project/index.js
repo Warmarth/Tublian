@@ -8,14 +8,13 @@ const rl = readLine.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
-
-rl.question("ask Your question ? ", (question) => {
+const Ai_chat = (ques) => {
   groq.chat.completions
     .create({
       messages: [
         {
           role: "user",
-          content: question,
+          content: ques,
         },
       ],
       model: "llama3-8b-8192",
@@ -23,11 +22,22 @@ rl.question("ask Your question ? ", (question) => {
     .then((chatCompletion) => {
       rl.output.write(chatCompletion.choices[0]?.message?.content || "");
     });
+};
 
-    
+function askedQuestion() {
+  rl.question("ask Your question ? ", (question) => {
+    if (question === "exit") {
+      console.log(".... Good Bye");
+      rl.close();
+    } else {
+      Ai_chat(question);
+      console.log("\n");
+      askedQuestion();
+    }
+  });
+}
 
-  rl.close();
-});
+askedQuestion();
 
 // async function main() {
 //   const completion = await groq.chat.completions
