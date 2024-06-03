@@ -4,10 +4,19 @@ require("dotenv").config();
 
 const groq = new Groq((api_key = process.env.GROQ_API_KEY));
 
+// create readline interface
 const rl = readLine.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
+
+// message role
+const messageRole = {
+  USER: "user ",
+  AI: "ai",
+};
+
+// create chat
 const Ai_chat = (ques) => {
   groq.chat.completions
     .create({
@@ -20,11 +29,12 @@ const Ai_chat = (ques) => {
       model: "llama3-8b-8192",
     })
     .then((chatCompletion) => {
-      rl.output.write(chatCompletion.choices[0]?.message?.content || "");
-      console.log("\n sentiment:  ");
+      rl.output.write(
+        `${chatCompletion.choices[0]?.message?.content} \n ` || ""
+      );
     });
 };
-
+// ask question
 function askedQuestion() {
   rl.question("ask Your question ? ", (question) => {
     if (question === "exit") {
