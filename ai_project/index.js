@@ -12,39 +12,45 @@ const rl = readLine.createInterface({
 
 // message role
 const messageRole = {
-  USER: "user ",
-  AI: "ai",
+  USER: "USER >",
+  AI: "AI >",
 };
 
 // create chat
-const Ai_chat = (ques) => {
-  groq.chat.completions
-    .create({
+const Ai_chat = async (ques) => {
+  try {
+    const chatCompletion = await groq.chat.completions.create({
       messages: [
+        {
+          role: "system",
+          content: "You are a helpful assistant.",
+        },
         {
           role: "user",
           content: ques,
         },
       ],
       model: "llama3-8b-8192",
-    })
-    .then((chatCompletion) => {
-      rl.output.write(
-        `${chatCompletion.choices[0]?.message?.content} \n ` || ""
-      );
     });
+
+    return chatCompletion.choices[0]?.message?.content || "";
+  } catch (error) {
+    console.error("Error fetching AI response:", error);
+    return "Sorry, I couldn't process your request.";
+  }
 };
 // ask question
-function askedQuestion() {
-  rl.question("ask Your question ? ", (question) => {
+async function askedQuestion() {
+  rl.question("user > ", async (question) => {
     if (question === "exit") {
       console.log(".... Good Bye");
       rl.close();
     } else {
-      Ai_chat(question);
+      console.log(messageRole.USER, question);
+      const aiResponse = await Ai_chat(question);
+      console.log(messageRole.AI, aiResponse);
       askedQuestion();
     }
   });
 }
-
 askedQuestion();
