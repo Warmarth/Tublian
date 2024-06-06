@@ -10,30 +10,42 @@ const rl = readLine.createInterface({
   output: process.stdout,
 });
 
+// function addHistory(question, answer) {
+//   let history = [];
+//   history.push({ question, answer });
+//   return history;
+// }
+
 // message role
 const messageRole = {
-  USER: "USER > ",
-  AI: "AI   > ",
+  USER: "user",
+  AI: "assistant ",
 };
+let conversationHistory = [
+  {
+    role: "system",
+    content: "limited to only machine learning and AI. Any other questions will be ignored.",
+  },
+];
 
 // create chat
 const Ai_chat = async (ques) => {
+  conversationHistory.push({
+    role: messageRole.USER,
+    content: ques,
+  });
   try {
     const chatCompletion = await groq.chat.completions.create({
-      messages: [
-        {
-          role: "system",
-          content: "You are a helpful assistant.",
-        },
-        {
-          role: "user",
-          content: ques,
-        },
-      ],
+      messages: conversationHistory,
       model: "llama3-8b-8192",
     });
 
-    return chatCompletion.choices[0]?.message?.content || "";
+    const response = chatCompletion.choices[0]?.message?.content || "";
+    // conversationHistory.push({
+    //   role: messageRole.AI,
+    //   content: response,
+    // });
+    return response;
   } catch (error) {
     console.error("Error fetching AI response:", error);
     return "Sorry, I couldn't process your request.";
@@ -41,16 +53,18 @@ const Ai_chat = async (ques) => {
 };
 // ask question
 async function askedQuestion() {
-  rl.question(messageRole.USER, async (question) => {
+  rl.question(`${messageRole.USER} > `, async (question) => {
     if (question === "exit") {
       console.log(".... Good Bye");
       rl.close();
     } else {
-      // console.log(messageRole.USER, question);
       const aiResponse = await Ai_chat(question);
-      console.log(messageRole.AI, aiResponse);
+      console.log(`${messageRole.AI} > `, aiResponse);
+      // addHistory(question, aiResponse);
       askedQuestion();
     }
   });
 }
 askedQuestion();
+
+// console.log(addHistory)
