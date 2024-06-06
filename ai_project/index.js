@@ -24,7 +24,8 @@ const messageRole = {
 let conversationHistory = [
   {
     role: "system",
-    content: "limited to only machine learning and AI. Any other questions will be ignored.",
+    content:
+      "limited to only machine learning and AI. Any other questions will be ignored.",
   },
 ];
 
@@ -32,7 +33,7 @@ let conversationHistory = [
 const Ai_chat = async (ques) => {
   conversationHistory.push({
     role: messageRole.USER,
-    content: ques,
+    content: ques.toLowerCase(),
   });
   try {
     const chatCompletion = await groq.chat.completions.create({
@@ -45,7 +46,7 @@ const Ai_chat = async (ques) => {
     //   role: messageRole.AI,
     //   content: response,
     // });
-    return response;
+    return response.toLowerCase();
   } catch (error) {
     console.error("Error fetching AI response:", error);
     return "Sorry, I couldn't process your request.";
@@ -54,7 +55,7 @@ const Ai_chat = async (ques) => {
 // ask question
 async function askedQuestion() {
   rl.question(`${messageRole.USER} > `, async (question) => {
-    if (question === "exit") {
+    if (question.toLowerCase() === "exit") {
       console.log(".... Good Bye");
       rl.close();
     } else {
