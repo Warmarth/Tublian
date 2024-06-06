@@ -12,8 +12,8 @@ const rl = readLine.createInterface({
 
 // message role
 const messageRole = {
-  USER: "USER >",
-  AI: "AI >",
+  USER: "USER > ",
+  AI: "AI   > ",
 };
 
 // create chat
@@ -41,12 +41,12 @@ const Ai_chat = async (ques) => {
 };
 // ask question
 async function askedQuestion() {
-  rl.question("user > ", async (question) => {
+  rl.question(messageRole.USER, async (question) => {
     if (question === "exit") {
       console.log(".... Good Bye");
       rl.close();
     } else {
-      console.log(messageRole.USER, question);
+      // console.log(messageRole.USER, question);
       const aiResponse = await Ai_chat(question);
       console.log(messageRole.AI, aiResponse);
       askedQuestion();
