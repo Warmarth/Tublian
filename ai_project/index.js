@@ -4,32 +4,29 @@ require("dotenv").config();
 
 const groq = new Groq((api_key = process.env.GROQ_API_KEY));
 
-// create readline interface
+// ============== create readline interface ==============//
 const rl = readLine.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-// function addHistory(question, answer) {
-//   let history = [];
-//   history.push({ question, answer });
-//   return history;
-// }
 
-// message role
+// ============== message role ==============//
 const messageRole = {
   USER: "user",
   AI: "assistant ",
 };
+
+// ============= conversation history =============//
 let conversationHistory = [
   {
     role: "system",
     content:
-      "limited to only machine learning and AI. Any other questions will be ignored.",
+      "limited to only machine learning and AI. Any other questions will be ignored but not rudely.",
   },
 ];
 
-// create chat
+// ============== AI chat ==============//
 const Ai_chat = async (ques) => {
   conversationHistory.push({
     role: messageRole.USER,
@@ -52,20 +49,20 @@ const Ai_chat = async (ques) => {
     return "Sorry, I couldn't process your request.";
   }
 };
-// ask question
+// ============== ask question ==============//
 async function askedQuestion() {
   rl.question(`${messageRole.USER} > `, async (question) => {
     if (question.toLowerCase() === "exit") {
       console.log(".... Good Bye");
+      const aiResponse = await Ai_chat(question);
+      console.log(`${messageRole.AI} > `, aiResponse);
       rl.close();
     } else {
       const aiResponse = await Ai_chat(question);
       console.log(`${messageRole.AI} > `, aiResponse);
-      // addHistory(question, aiResponse);
       askedQuestion();
     }
   });
 }
 askedQuestion();
 
-// console.log(addHistory)
